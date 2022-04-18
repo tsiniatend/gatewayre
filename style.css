@@ -1,0 +1,308 @@
+/* gots to have the font looking good for whole site so lets start off there*/
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+
+/* the background hero template i can lay my video on top off*/
+.hero{ /* GO OVER */
+  width: 100%;
+  height: 100vh;
+/* add a background color for contrast with video text gives it a vibe */
+  background-image: linear-gradient(rgba(12,3,51,0.3),rgba(12,3,51,0.3));
+  postion: relative;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Z INDEX always for the backgroud grey to be visible with the video but i still cant figure out how to get the video the right size for the page, ask for help asap*/
+.back-video{
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9){ /* GO OVER */
+    .back-video{
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-aspect-ratio: 16/9){
+    .back-video{
+        width: auto;
+        height: 100%;
+    }
+}
+
+
+
+
+
+/* nav is what allows me to push logo to the side, need to use flexible display and align it to center but what does space between mean? Flex box/ or grid: flex means one way horizontal or vert. Justify content is flex for in between*/
+nav{
+    width: 100%;
+    position: absolute; /* GO OVER */
+    top: 0;
+    left: 0;
+    padding: 20px 8%;
+    display: flex; /* GO OVER */
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* line for logo sizing (maybe get a new one or add a cool effect*/
+nav .logo{
+          width: 160px;
+}
+
+/* navigation bar aligment on top right */
+nav ul li{
+          list-style: none;
+          display: inline-block; /* GO OVER */
+          margin-left: 40px;
+}
+
+/* decoration takes lines off */
+nav ul li a{
+          text-decoration: none; /* GO OVER */
+          color: #fff;
+          font-size: 20px;
+}
+
+/* part where you give Ethiopia invisbility powers, have to use text stroke*/
+.content h1:hover{
+      -webkit-text-stroke: 2px #fff;/* GO OVER */
+      color: transparent;
+}
+
+
+
+/* main page was looking as crooked as my teeth before braces, got to @ my html content and make changes too that*/
+.content{
+          text-align: center;
+}
+/* actual font and color changes have to @h1 this is specfic towards Ethiopia and Explore Button*/
+.content h1{
+            font-size: 160px;
+            color: #fff;
+            font-weight: 600;
+}
+
+
+
+
+/* to make them in line you have to tweak display border radius, margin top and padding. Write more notes on those fairly confusing*/
+.content a{
+          text-decoration: none;
+          display: inline-block;
+          color: #fff;
+          font-size: 24px;
+          border: 2px solid #fff;
+          padding: 14px 70px;
+          border-radius: 50px; /*GO OVER */
+          margin-top: 20px;
+}
+
+
+
+
+
+/* GO OVER RESPONSIVE DESGINr in order to ratio size it to all devices, but how comes it cropped out the video logo? adjusts based on website its on */
+
+
+
+
+
+
+/* picked out same vibe of green yellow red colorway as picture to rep flag */
+.col:nth-child(1){ /* GO OVER */
+    background: #228B22;
+}
+.col:nth-child(2){
+    background: #FFCD00;
+}
+.col:nth-child(3){
+    background: #800000;
+}
+
+/* this is what inreases the width when selected see: .col*/
+.col:hover{
+    flex-grow: 2.5; /* GO OVER TRANSITION */
+}
+.col:hover .infodump{
+    display: block;
+}
+.col:hover h2{
+    text-align: left;
+}
+
+/* aligns the title text in the center*/
+h2{
+    text-align: center;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+
+/* text edits for infodumps space taking in col as well as display none*/ 
+.infodump{
+    max-width: 230px;
+    font-size: 14px;
+    margin: 28px 0;
+    display: none; /* GO OVER */
+}
+
+
+
+
+
+.container{
+   width: 1000px;
+   height: 400px;
+   margin: 120px auto;
+   display: flex;
+}
+/* in order to divide columns and create equal space with flex, border box will keep it in file and added transition to slow down col movement */
+.col{
+    height: 100%;
+    flex: 1;
+    color: #fff;
+    box-sizing: border-box;
+    padding: 25px;
+    position: relative;
+    transition: 0.6s; /* GO OVER */
+}
+/* cute button design (maybe make it animated??) */
+.infodump button{
+    border: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    padding: 8px 18px;
+    color: #fff;
+    border-radius: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* IMG AND TRANSITION CONTROL! adjusting the image to make them fit in col, the picutres already had to be the same size BUT made absoulte to keep in col and made col relative to that*/
+.col img{
+    width: 200px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+
+
+
+
+
+
+ /* eco video*/
+.clip{
+  width: 400px;
+  height: 225px;
+  postion: relative; /* GO OVER */
+  top: 0;
+}
+/* its the oppoiste way from the position name */
+footer{
+  Background-color: #6b8e23;
+  color: white;
+  width: 100%;
+  text-align: center;
+  bottom: 0; 
+}
+ /* CONTACT US PAGE*/
+body
+{
+    background-color: #efefef;
+    font-family: sans-serif;
+}
+
+
+/* GOOO OVER EXTRA ## and border radius*/
+ .contact-box
+{
+    width: 500px;
+    background-color: ##DCDCDC;
+    box-shadow: 0 0 20px 0 #999;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute; 
+    border-radius: 50px;
+}
+form
+{
+    margin: 35px;
+}
+
+
+
+
+
+ 
+.input-field
+{
+    width: 400px;
+    height: 40px;
+  /*space between boxes*/
+    margin-top: 25px;
+  /* space from left to right */
+    padding-left: 10px;
+    padding-right: 10px;
+  /* border patrol */
+    border: 3px solid #47c35a;
+    border-radius: 14px;
+    outline: none;
+    background-color: #FFCD00;
+}
+.textarea-field
+{
+   height: 150px;
+   padding-top: 10px;
+   background-color: #FFCD00;
+}
+
+.send
+{
+   border-radius: 20px;
+   color: #fff;
+   margin-top: 18px;
+   padding: 10px;
+   background-color: #800000;
+   font-size: 12px;
+   border: none;
+   cursor: pointer;
+}
+.container2{
+  display: flex;
+  flex-direction: column;
+}
+
+.flogo{
+  width: 35px;
+}
+
+
+
+
+
+
+
+
+
+
+
